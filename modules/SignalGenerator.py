@@ -22,7 +22,9 @@ def generate_array(length, position=0.5, width = 0.1, maximum = 10., noise = Tru
 
     y = np.add(noise,peak)
 
-    return x, noise, peak, y
+    return y
+
+   
 
    
 
