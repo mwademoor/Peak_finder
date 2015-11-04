@@ -15,13 +15,19 @@ def import_data_from_file(file_frequency,file_S21):
     file_frequency : file containing the frequencies used during the experiment
     file_S21 : file containing the S21 parameters recorded for the given frequencies
     
+    Filenames should be given as strings.
+    
     OUTPUT
     ------
     Numpy array
     First row = frequencies
     Second row = S21
+    Elements of the array are floats.
     """
     
+    assert isinstance(file_frequency,str), "Please input filenames strings."
+    assert isinstance(file_S21,str), "Please input filenames strings."
+        
     file_path = "data"
     complete_file_path_frequency = os.path.join(file_path, file_frequency)
     complete_file_path_S21 = os.path.join(file_path, file_S21)
