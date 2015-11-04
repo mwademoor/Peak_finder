@@ -1,0 +1,26 @@
+In this project I will find a peak in noisy data. 
+
+I will use a structured python file, with classes and using tests. 
+
+First we have to import the data
+
+Then we have to look for the peak. 
+First we have to determine a threshold: get it from average and sdv from signal
+Check if there are more points around it.
+Output: position(s)
+
+Then we fit the peak.
+Input: data, position
+Output: fit data 
+
+Plot function optional
+
+
+<<<<<<< HEAD
+Test functions: 
+generate signal 
+test if it finds the right peaks
+=======
+
+>>>>>>> 022910064e4b3f610b5b79209b02d6ac5874b300
+ 
