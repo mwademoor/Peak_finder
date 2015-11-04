@@ -40,29 +40,3 @@ class PeakFinder(object):
                 record_first = True ##reinitialize the new 'first' data
         return peak_locations 
     
-def import_data_from_file(file):
-    """import data from file.
-    PARAMETERS 
-    file 
-    OUTPUT 
-    numpy array
-    """
-    f = open(file, 'r')
-    
-    ###not working yet. 
-    for line in f:
-        while i<10:
-            print(i)
-            #data_array=np.array([])
-            #i=0
-            #for line in f:
-            #    while i<10:
-            #        #print(line)
-            #        print i
-            #    i+=1
-            #    data_array = np.append(data_array, line)
-    f.close()  
-
-def generate_data(length=100, position=0.5, width = 0.1, maximum = 10., noise = True):
-    return sg.generate_array(length,position,width,maximum,noise)
-    """Generate data"""
