@@ -1,4 +1,5 @@
 """Peak Finder module, for the Casimir course. authors: Suzanne van Dam and Michiel de Moor"""
+##TODO: more tests and error flags in the code
 import numpy as np
 from scipy import optimize
 from matplotlib import pyplot as plt
@@ -13,7 +14,7 @@ class PeakFinder(object):
         self.xdata = xarray
         self.ydata = yarray
    
-    def find_peak_position(self, minimal_peak_width = 5):
+    def find_peak_position(self, minimal_peak_width = 2):
         """function finds a guess of the position of the peak in self.data
         PARAMETERS
         ===================
@@ -24,9 +25,10 @@ class PeakFinder(object):
         a numpy array containing the detected peak positions (indices of self.data)
         -------------------
         """
+        ####TODO: to fit the data correctly, make a dynamical average and std
         self.average = np.average(self.ydata)
         self.std = np.std(self.ydata)
-        threshold = self.average+self.std
+        threshold = self.average+self.std*2
         data_above_threshold = [i for i,j in enumerate(self.ydata) if np.abs(j)>threshold]
         self.peak_locations = np.array([])
         self.peak_sigma = np.array([])
@@ -49,6 +51,7 @@ class PeakFinder(object):
                     self.peak_sigma = np.append(self.peak_sigma,(self.xdata[last]-self.xdata[first]))
                     self.peak_height = np.append(self.peak_height,(self.ydata[int((first+last)/2.)]))
                 record_first = True ##reinitialize the new 'first' data
+                
         return self.peak_locations, self.peak_sigma
 
     def fit_Gaussian(self):
