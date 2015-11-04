@@ -1,11 +1,11 @@
-import numpy
+import numpy as np
 import math
 import scipy
 import sys
 import os
 from os import path
 
-def import_data_from_file(self,file_frequency,file_S21):
+def import_data_from_file(file_frequency,file_S21):
     """import data from file.
     
     Data files should be in the "data" folder.
